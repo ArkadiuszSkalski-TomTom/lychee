@@ -1,7 +1,7 @@
 name: Nightly
 on:
-  schedule:
-    - cron: '45 8 * * *'
+#  schedule:
+#    - cron: '45 8 * * *'
   workflow_dispatch:
     inputs:
       tag_name:
@@ -13,7 +13,7 @@ jobs:
   trigger:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.NIGHTLY_BUILD_TOKEN }}
+      GH_TOKEN: ${{ secrets.NIGHTLY_BUILD_TOKEN }}
     permissions:
       contents: write
     steps:
